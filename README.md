@@ -14,89 +14,89 @@
 
 📌 How to use MongoDB in Python: To use MongoDB in Python, follow these steps:
 
-    Step 1️⃣: Install the MongoDB Python driver using pip:
+Step 1️⃣: Install the MongoDB Python driver using pip:
 
-    ```code
-    pip install pymongo
+```code
+pip install pymongo
+```
+
+Step 2️⃣: Import the pymongo library in your Python script:
+
+```code
+import pymongo
+```
+
+Step 3️⃣: Establish a connection to the MongoDB server:
+
+    ```
+    # Replace "mongodb://localhost:27017" with your MongoDB connection string
+    client = pymongo.MongoClient("mongodb://localhost:27017")
+    ``` 
+
+Step 4️⃣: Access a database and collection:
+    
+    ``` 
+     # Access a specific database
+    db = client["mydatabase"]
+    
+    # Access a specific collection within the database
+    collection = db["mycollection"]
     ```
 
-    Step 2️⃣: Import the pymongo library in your Python script:
+Step 5️⃣: Perform database operations:
 
-    ```code
-    import pymongo
+-   Insert documents 📥:
+    ```
+    # Insert a single document
+    document = {"name": "John", "age": 30}
+    collection.insert_one(document)
+    
+    # Insert multiple documents
+    documents = [
+        {"name": "Alice", "age": 25},
+        {"name": "Bob", "age": 35}
+    ]
+    collection.insert_many(documents)
     ```
 
-    Step 3️⃣: Establish a connection to the MongoDB server:
+-   Find documents 🔍:
+
+    ```
+    # Find all documents in a collection
+    result = collection.find()
+    
+    # Find documents that match a specific query
+    query = {"name": "John"}
+    result = collection.find(query)
+    
+    # Iterate over the result
+    for document in result:
+        print(document)
+    ```
+
+-   Update documents ✏️:
 
         ```
-        # Replace "mongodb://localhost:27017" with your MongoDB connection string
-        client = pymongo.MongoClient("mongodb://localhost:27017")
-        ``` 
-
-    Step 4️⃣: Access a database and collection:
-        
-        ``` 
-        # Access a specific database
-        db = client["mydatabase"]
-        
-        # Access a specific collection within the database
-        collection = db["mycollection"]
-        ```
-
-    Step 5️⃣: Perform database operations:
-
-    -   Insert documents 📥:
-        ```
-        # Insert a single document
-        document = {"name": "John", "age": 30}
-        collection.insert_one(document)
-        
-        # Insert multiple documents
-        documents = [
-            {"name": "Alice", "age": 25},
-            {"name": "Bob", "age": 35}
-        ]
-        collection.insert_many(documents)
-        ```
-
-    -   Find documents 🔍:
-
-        ```
-        # Find all documents in a collection
-        result = collection.find()
-        
-        # Find documents that match a specific query
+        # Update a document
         query = {"name": "John"}
-        result = collection.find(query)
+        new_values = {"$set": {"age": 40}}
+        collection.update_one(query, new_values)
         
-        # Iterate over the result
-        for document in result:
-            print(document)
+        # Update multiple documents
+        query = {"age": {"$lt": 30}}
+        new_values = {"$inc": {"age": 1}}
+        collection.update_many(query, new_values)
         ```
-
-    -   Update documents ✏️:
-
-            ```
-            # Update a document
-            query = {"name": "John"}
-            new_values = {"$set": {"age": 40}}
-            collection.update_one(query, new_values)
-            
-            # Update multiple documents
-            query = {"age": {"$lt": 30}}
-            new_values = {"$inc": {"age": 1}}
-            collection.update_many(query, new_values)
-            ```
-    -   Delete documents ❌:
-        ```
-        # Delete a document
-        query = {"name": "John"}
-        collection.delete_one(query)
-        
-        # Delete multiple documents
-        query = {"age": {"$gt": 40}}
-        collection.delete_many(query)
-        ```
+-   Delete documents ❌:
+    ```
+    # Delete a document
+    query = {"name": "John"}
+    collection.delete_one(query)
+    
+    # Delete multiple documents
+    query = {"age": {"$gt": 40}}
+    collection.delete_many(query)
+    ```
 
 ## MongoDB query operators in PyMongo
 
