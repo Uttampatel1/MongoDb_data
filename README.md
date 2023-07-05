@@ -28,20 +28,20 @@ import pymongo
 
 Step 3️⃣: Establish a connection to the MongoDB server:
 
-    ```
-    # Replace "mongodb://localhost:27017" with your MongoDB connection string
-    client = pymongo.MongoClient("mongodb://localhost:27017")
-    ``` 
+```
+# Replace "mongodb://localhost:27017" with your MongoDB connection string
+client = pymongo.MongoClient("mongodb://localhost:27017")
+``` 
 
 Step 4️⃣: Access a database and collection:
     
-    ``` 
-     # Access a specific database
-    db = client["mydatabase"]
-    
-    # Access a specific collection within the database
-    collection = db["mycollection"]
-    ```
+``` 
+# Access a specific database
+db = client["mydatabase"]
+
+# Access a specific collection within the database
+collection = db["mycollection"]
+```
 
 Step 5️⃣: Perform database operations:
 
