@@ -97,6 +97,53 @@ Step 5️⃣: Perform database operations:
     query = {"age": {"$gt": 40}}
     collection.delete_many(query)
     ```
+## Some useful MongoDB operations in PyMongo
+
+1️⃣ Counting Documents:
+```
+count = collection.count_documents({'key': 'value'})
+``` 
+
+2️⃣ Aggregation Pipeline:
+
+```
+pipeline = [
+    {'$match': {'key': 'value'}},
+    {'$group': {'_id': '$category', 'count': {'$sum': 1}}}
+]
+result = collection.aggregate(pipeline)
+``` 
+
+3️⃣ Indexing:
+
+```
+collection.create_index('key', unique=True)
+``` 
+
+4️⃣ Sorting Documents:
+
+```
+result = collection.find().sort('key', pymongo.ASCENDING)
+``` 
+
+5️⃣ Limiting Results:
+
+
+```
+result = collection.find().limit(10)
+``` 
+
+6️⃣   Filtering Fields:
+
+```
+result = collection.find({}, {'key1': 1, 'key2': 1})
+``` 
+
+7️⃣ Closing the Connection:
+
+```
+client.close()
+```
 
 ### MongoDB query operators in PyMongo
 
@@ -140,6 +187,8 @@ Step 5️⃣: Perform database operations:
     -   `$project` (Field Projection): Specifies the fields to include or exclude in the query result. 📊🔳
     -   `$slice` (Array Slice): Limits the number of elements returned in an array field. 📊🔢
     
+
+
 📌 Note: These are just a few basic operations. MongoDB offers a wide range of features and query capabilities. You can refer to the official MongoDB documentation for more detailed information: [https://docs.mongodb.com/](https://docs.mongodb.com/)
 
 
