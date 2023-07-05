@@ -1,9 +1,9 @@
 ## 🌟 MongoDB Cheat Sheet 🌟
 
-📌 What is MongoDB? 
+### 📌 What is MongoDB? 
 -   MongoDB is a popular document-oriented NoSQL database that provides high performance, scalability, and flexibility for handling large volumes of data. It stores data in flexible JSON-like documents, making it easy to model and retrieve complex data structures.
 
-📌 Use cases of MongoDB:
+### 📌 Use cases of MongoDB:
 
 -   Content Management Systems (CMS) 📄: MongoDB is well-suited for storing and managing content due to its flexible schema and ability to handle unstructured data.
 -   Real-time Analytics 📊: MongoDB's ability to handle large volumes of data with high throughput makes it a good choice for real-time analytics applications.
@@ -12,7 +12,7 @@
 -   Mobile Applications 📱: MongoDB's support for offline synchronization and mobile-specific features makes it a good fit for mobile app development.
 
 
-📌 How to use MongoDB in Python: To use MongoDB in Python, follow these steps:
+### 📌 How to use MongoDB in Python: To use MongoDB in Python, follow these steps:
 
 Step 1️⃣: Install the MongoDB Python driver using pip:
 
@@ -98,7 +98,7 @@ Step 5️⃣: Perform database operations:
     collection.delete_many(query)
     ```
 
-## MongoDB query operators in PyMongo
+### MongoDB query operators in PyMongo
 
 1.  Comparison Operators:
     -   `$eq` (Equals): Matches values that are equal to a specified value. ✅
